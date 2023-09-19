@@ -17,7 +17,7 @@
 </imx-tile>
 
 <!-- List-Tile -->
-  <imx-tile *ngIf="viewReady && reports?.length > 0"
+  <imx-tile *ngIf="viewReady && reports?.length > -1"
   data-imx-identifier="businessowner-chartsummary-tile-my-direct-reports" [identifier]="'my-direct-reports'"
   [size]="'Dashboard'" [contentType]="'Container'" (actionClick)="openIdentitiesOverview()">
   <ng-template #CaptionTemplate>

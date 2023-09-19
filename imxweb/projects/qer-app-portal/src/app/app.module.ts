@@ -24,7 +24,7 @@
  *
  */
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorIntl } from '@angular/material/paginator';
@@ -78,10 +78,12 @@ import { PortalStarlingService } from './portal-starling.service';
 import { environment } from '../environments/environment';
 import appConfigJson from '../appconfig.json';
 import { PortalHistoryService } from './portal-history.service';
+import { HelpPageComponent } from './help-page/help-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelpPageComponent
   ],
   imports: [
     AppRoutingModule,
@@ -91,6 +93,10 @@ import { PortalHistoryService } from './portal-history.service';
     EuiCoreModule,
     EuiMaterialModule,
     HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'XSRF-TOKEN',
+      headerName: 'X-XSRF-TOKEN'
+    }),
     IdentitiesModule,
     LoggerModule.forRoot({ level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.OFF }),
     MatDialogModule,

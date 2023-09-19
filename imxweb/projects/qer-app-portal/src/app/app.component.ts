@@ -29,7 +29,7 @@ import { OverlayRef } from '@angular/cdk/overlay';
 import { Router, NavigationEnd, NavigationStart, NavigationError, RouterEvent, NavigationCancel } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { AuthenticationService, ISessionState, MenuItem, SystemInfoService, MenuService, IeWarningService } from 'qbm';
+import { AppConfigService,AuthenticationService, ISessionState, MenuItem, SystemInfoService, MenuService, IeWarningService } from 'qbm';
 import { PendingItemsType, ProjectConfigurationService, UserModelService } from 'qer';
 import { QerProjectConfig } from 'imx-api-qer';
 import { ProjectConfig } from 'imx-api-qbm';
@@ -50,6 +50,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly authentication: AuthenticationService,
+    public readonly appConfig: AppConfigService,
     menuService: MenuService,
     userModelService: UserModelService,
     private readonly router: Router,
@@ -102,6 +103,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public async goToAddressbook(): Promise<void> {
     this.router.navigate(['addressbook']);
+  }
+
+  public goToHelpPage(): void {
+    this.router.navigate(['help-page']);
+  }
+
+  public goHome(): void {
+    this.router.navigate([this.appConfig.Config.routeConfig.start], { queryParams: {} });
   }
 
   private setupRouter(): void {

@@ -3,6 +3,7 @@ $material_icons_font_path: "~@elemental-ui/core/assets/MaterialIcons";
 $cadence_font_path: "~@elemental-ui/cadence-icon/dist";
 $source_sans_pro_font_path: "~@elemental-ui/core/assets/Source_Sans_Pro";
 
+@import 'variables.scss';
 @import '~@elemental-ui/core/src/styles/core.scss';
 
 .imx-dialog-panel-class > .mat-dialog-container {
@@ -69,3 +70,90 @@ imx-data-explorer-accounts {
 .governance-sidesheet__tab-content {
     height: calc(100% - 120px);
 }
+
+
+// Custom ING Styles
+
+.eui-masthead,
+.mat-raised-button.mat-primary,
+.mat-toolbar.mat-primary,
+.mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: $ING_primary;
+}
+
+.menu-wrap {
+    position: relative;
+    a.ing-home {
+        position: absolute;
+        top: 14px;
+        left: 32px;
+        font-size: 16px;
+        color: $ING_nav;
+        opacity: .6;
+        z-index: 100;
+
+        &:hover {
+            cursor: pointer;
+            color: $ING_primary;
+            text-decoration: none;
+        }
+    }
+
+    a.ing-help {
+        position: absolute;
+        top: 14px;
+        right: 42px;
+        color: $ING_primary;
+        z-index: 100;
+
+        &:hover {
+            cursor: pointer;
+            font-weight: 500;
+        }
+    }
+
+    .mat-tab-list {
+        margin-left: 92px;
+    }
+}
+
+.eui-sidesheet .mat-toolbar {
+    background-color: $ING_primary!important;
+}
+
+.eui-alert.eui-alert-type--info.eui-alert-colored {
+    background-color: rgba($ING_primary, 0.2)!important;
+    border: 1px solid $ING_primary!important;
+}
+.eui-alert.eui-alert-type--info .eui-alert-icon {
+    color: $ING_primary!important;
+}
+
+.mat-button.mat-primary, 
+.mat-icon-button.mat-primary, 
+.mat-stroked-button.mat-primary {
+    color: $ING_primary;
+}
+
+.governance-sidesheet .mat-expansion-panel .mat-form-field-appearance-outline .mat-form-field-flex,
+.roledetail-sidesheet .mat-form-field-appearance-outline {
+    .mat-form-field-flex {
+        pointer-events: none;
+    }
+    .mat-form-field-suffix {
+        display: none!important;
+      }
+} 
+.governance-sidesheet .mat-expansion-panel .mat-form-field-appearance-outline .mat-form-field-outline,
+.roledetail-sidesheet .mat-form-field-appearance-outline .mat-form-field-flex {
+    background-color: $Imx_White-two;
+}
+
+.cc_indentity-sidesheet {
+    .mat-select-arrow {
+        color: transparent;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-suffix {
+      display: none!important;
+    }
+  }

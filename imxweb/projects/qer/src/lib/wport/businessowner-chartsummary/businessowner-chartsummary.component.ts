@@ -124,12 +124,12 @@ export class BusinessOwnerChartSummaryComponent implements OnInit {
     let overlayRef: OverlayRef;
     setTimeout(() => overlayRef = this.busyService.show());
     try {
-      if (await this.qerPermissions.isPersonManager()) {
+      //if (await this.qerPermissions.isPersonManager()) {
         this.reports = (await this.qerClient.typedClient.PortalPersonReports.Get({
-          OnlyDirect: true, // direct reports only
+          OnlyDirect: false, // direct reports only
           PageSize: 10000
         })).Data;
-      }
+      //}
     } finally {
       setTimeout(() => this.busyService.hide(overlayRef));
     }

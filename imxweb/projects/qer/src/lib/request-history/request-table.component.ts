@@ -127,7 +127,7 @@ export class RequestTableComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly UID_ComplianceRuleId = 'cpl.UID_ComplianceRule';
   private displayedColumns: IClientProperty[];
   private readonly subscriptions: Subscription[] = [];
-  private readonly filterPresets = { ShowEndingSoon: undefined, ShowMyPending: undefined };
+  private readonly filterPresets = { ShowEndingSoon: undefined, ShowMyPending: undefined, ShowMyDecisions: undefined, person: undefined };
   @ViewChild(DataTableComponent) private readonly table: DataTableComponent<TypedEntity>;
   @ViewChild(DataSourceToolbarComponent) private readonly dataToolbar: DataSourceToolbarComponent;
 
@@ -161,6 +161,8 @@ export class RequestTableComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.navigationState.ShowEndingSoon = this.filterPresets.ShowEndingSoon;
     this.navigationState.ShowMyPending = this.filterPresets.ShowMyPending;
+    this.navigationState.ShowMyDecisions = this.filterPresets.ShowMyDecisions;
+    this.navigationState.person = this.filterPresets.person;
 
     this.subscriptions.push(
       this.actionService.applied.subscribe(async () => {

@@ -86,7 +86,7 @@ export class UnsGroupObjectSheetComponent implements ObjectSheetInterface, OnIni
   public IsHistoryActive: boolean;
 
   public IsEditEffective() {
-    return this.isAdmin || this.isManager;
+    return this.isAdmin || this;
   }
 
   public Action12(): void {

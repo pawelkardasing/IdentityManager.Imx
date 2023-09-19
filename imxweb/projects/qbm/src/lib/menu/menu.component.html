@@ -1,11 +1,11 @@
 <nav mat-tab-nav-bar>
   <ng-container *ngIf="menuItems">
     <span *ngFor="let item of menuItems">
-      <a mat-tab-link *ngIf="!item.items" (click)="navigate(item)" [attr.data-imx-identifier]="item.id" (keyup.enter)="navigate(item)" [active]="isActive(item)">
+      <a mat-tab-link *ngIf="!item.items" (click)="navigate(item)" [class]="item.id" [attr.data-imx-identifier]="item.id" (keyup.enter)="navigate(item)" [active]="isActive(item)">
         {{ item.title | translate }}
       </a>
       <ng-container *ngIf="item.items">
-        <a mat-tab-link [matMenuTriggerFor]="submenu" (keyup.tab)="submenuTrigger.openMenu()" [attr.data-imx-identifier]="item.id"
+        <a mat-tab-link [matMenuTriggerFor]="submenu" (keyup.tab)="submenuTrigger.openMenu()" [class]="item.id" [attr.data-imx-identifier]="item.id"
           (keyup.shift.tab)="submenuTrigger.openMenu()" #submenuTrigger="matMenuTrigger" [active]="isActive(item)">
           {{ item.title | translate }}
         </a>

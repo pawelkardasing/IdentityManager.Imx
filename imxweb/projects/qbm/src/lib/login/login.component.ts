@@ -139,6 +139,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   public async ngOnInit(): Promise<void> {
     const config = await this.appConfigService.getImxConfig();
+
+    localStorage.setItem('isShow', 'true');
+    
     if (config.CompanyLogoUrl) {
       // make relative URL absolute if needed
       this.logoUrl = new URL(config.CompanyLogoUrl, this.appConfigService.BaseUrl).href;

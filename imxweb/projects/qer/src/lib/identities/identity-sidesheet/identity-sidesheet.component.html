@@ -1,7 +1,7 @@
 <div class="governance-sidesheet">
   <mat-tab-group>
     <mat-tab [label]="'#LDS#Details' | translate">
-      <div class="governance-sidesheet__tab-content">
+      <div class="governance-sidesheet__tab-content cc_indentity-sidesheet">
         <div class="governance-sidesheet__tab-content-body">
           <eui-alert *ngIf="isIdentityMarkedForDelete" class="imx-helper-alert" type="info" [condensed]="true" [colored]="true" [dismissable]="true">
             {{ '#LDS#This identity will be deleted.' | translate }}
@@ -107,7 +107,7 @@
                 <span translate>#LDS#Assign to new manager</span>
               </button>
             </mat-menu>
-            <button
+            <!--<button
               mat-flat-button
               color="primary"
               (click)="save()"
@@ -115,7 +115,7 @@
               [disabled]="detailsFormGroup?.pristine || detailsFormGroup?.invalid"
             >
               <span translate>#LDS#Save</span>
-            </button>
+            </button>-->
           </div>
         </mat-card>
       </div>

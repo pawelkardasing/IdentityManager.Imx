@@ -1,5 +1,6 @@
 @import "~@elemental-ui/core/src/styles/_palette.scss";
 @import "../../../../../qbm/src/lib/tile/tile-variables.scss";
+@import "variables.scss";
 
 :host > ::ng-deep imx-tile .mat-card {
   height: 140px;
@@ -31,7 +32,7 @@
 }
 
 .mat-card-title > eui-icon {
-  color: $black-9;
+  color: $ING_primary; //$black-9;
   margin-right: 0.5em;
 }
 

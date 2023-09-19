@@ -186,7 +186,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
         const column = this.selectedIdentity.GetColumn(columnName);
         return {
           column,
-          isReadOnly: () => !column.GetMetadata().CanEdit(),
+          isReadOnly: () => column.GetMetadata().CanEdit(),
           hint: {
             UID_DialogCulture: '#LDS#Select the language in which you want to display the Web Portal.',
             UID_DialogCultureFormat: '#LDS#Select the language you want to use for date and number formats.'

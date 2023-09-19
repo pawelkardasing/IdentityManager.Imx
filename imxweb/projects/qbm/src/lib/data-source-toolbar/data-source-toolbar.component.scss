@@ -1,4 +1,5 @@
 @import "~@elemental-ui/core/src/styles/_palette.scss";
+@import "variables.scss";
 
 .imx-data-source-toolbar-container {
   .imx-data-source-toolbar {
@@ -158,6 +159,11 @@
 
 .imx-warning-icon {
   color: $corbin-orange;
+}
+
+.mat-button-toggle-appearance-standard,
+.mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+  color: $ING_primary;
 }
 
 

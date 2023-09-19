@@ -25,7 +25,8 @@
  */
 
 import { Component, Inject } from '@angular/core';
-import { EuiSidesheetRef, EUI_SIDESHEET_DATA } from '@elemental-ui/core';
+import { EuiSidesheetRef, EUI_SIDESHEET_DATA,  EuiLoadingService } from '@elemental-ui/core';
+import { OverlayRef } from '@angular/cdk/overlay';
 import { TranslateService } from '@ngx-translate/core';
 
 import { BulkItem, BulkItemStatus, ConfirmationService, LdsReplacePipe } from 'qbm';
@@ -43,12 +44,14 @@ export class ServiceItemEditComponent {
     private readonly confirmationService: ConfirmationService,
     private readonly ldsReplace: LdsReplacePipe,
     private readonly translate: TranslateService,
-    private readonly sideSheetRef: EuiSidesheetRef
+    private readonly sideSheetRef: EuiSidesheetRef,
+    private readonly busyService: EuiLoadingService,
   ) {
     this.sideSheetRef.closeClicked().subscribe(__ => this.close(false));
   }
 
   public async close(submit: boolean = true): Promise<void> {
+    let overlayRef: OverlayRef;
     const bulkItemsWithNoDecision = this.bulkItems.filter(bulkItem => bulkItem.status === BulkItemStatus.unknown);
     if (!submit && await this.confirmationService.confirm({
       Title: '#LDS#Heading Cancel Request Process',
@@ -70,7 +73,10 @@ export class ServiceItemEditComponent {
         return this.sideSheetRef.close(true);
       }
     }
-    return this.sideSheetRef.close(true);
+    if (submit) {
+      return this.sideSheetRef.close(true);
+    }
+    return this.busyService.hide(overlayRef);
   }
 
   public hasBulkItemsWithDecision(): boolean {

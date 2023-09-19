@@ -5,7 +5,8 @@
       <img class="custom-logo" *ngIf="logoUrl" [src]="logoUrl" data-imx-identifier="masthead-custom-logo" (click)="goHome()">
 
       <h1 class="imx-masthead-app-name" data-imx-identifier="masthead-button-goHome" (click)="goHome()">
-        {{ appConfig?.Config?.Title }}
+        User Access Portal
+        <!--{{ appConfig?.Config?.Title }}-->
       </h1>
       <span class="imx-masthead-space"></span>
       <span class="imx-masthead--controls">
@@ -36,7 +37,7 @@
       <span translate>#LDS#Log off</span>
     </button>
   </mat-menu>
-  <button mat-button class="imx-masthead--icon-button" [matMenuTriggerFor]="helpMenu"
+  <!--<button mat-button class="imx-masthead--icon-button" [matMenuTriggerFor]="helpMenu"
     data-imx-identifier="help-menu-button">
     <eui-icon icon="help"></eui-icon>
     <span translate>#LDS#Menu Entry Help</span>
@@ -49,5 +50,5 @@
     <button mat-menu-item data-imx-identifier="help-menu-about" (click)="openAboutDialog()">
       <span translate>#LDS#About</span>
     </button>
-  </mat-menu>
+  </mat-menu>-->
 </ng-template>

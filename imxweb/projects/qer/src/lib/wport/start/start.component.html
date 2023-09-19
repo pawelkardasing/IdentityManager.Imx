@@ -1,11 +1,11 @@
 <h1 class="mat-headline">{{ '#LDS#Welcome' | translate }}</h1>
-
+<imx-maintenance-banner></imx-maintenance-banner>
 <ng-container *ngIf="viewReady">
   <div class="imx-flexible-tile-row">
     <imx-badge-tile
       data-imx-identifier="start-tile-shopping-cart"
       [caption]="'#LDS#Heading Products in Shopping Cart' | translate"
-      *ngIf="userConfig?.IsITShopEnabled && GetCountProductsinShoppingCart() > 0"
+      *ngIf="userConfig?.IsITShopEnabled && GetCountProductsinShoppingCart() > -1"
       [value]="GetCountProductsinShoppingCart()"
       [identifier]="'shopping-cart'"
       (actionClick)="GoToShoppingCart()"
@@ -16,7 +16,7 @@
       data-imx-identifier="start-tile-it-shop-approvals"
       [caption]="'#LDS#Heading Pending Requests' | translate"
       [tooltip]="'#LDS#Shows the pending requests you can approve or deny.' | translate"
-      *ngIf="userConfig?.IsITShopEnabled && GetCountPendingRequests() > 0"
+      *ngIf="userConfig?.IsITShopEnabled && GetCountPendingRequests() > -1"
       [value]="GetCountPendingRequests()"
       [identifier]="'it-shop-approvals'"
       (actionClick)="GoToItshopApprovals()"
@@ -27,7 +27,7 @@
       data-imx-identifier="start-tile-request-history"
       [caption]="'#LDS#Heading My Pending Requests' | translate"
       [tooltip]="'#LDS#Shows your pending requests others can approve or deny.' | translate"
-      *ngIf="userConfig?.IsITShopEnabled && GetCountInRequestHistory() > 0"
+      *ngIf="userConfig?.IsITShopEnabled && GetCountInRequestHistory() > -1"
       [value]="GetCountInRequestHistory()"
       [identifier]="'request-history'"
       (actionClick)="router.navigate(['requesthistory'], { queryParams: { ShowMyPending: 1 } })"
@@ -65,7 +65,7 @@
     <imx-ext class="imx-flexible-tile-row" id="Dashboard-SmallTiles" [referrer]="this"></imx-ext>
   </div>
   <div class="imx-flexible-tile-row">
-    <imx-icon-tile
+    <!--<imx-icon-tile
       *ngIf="ShowPasswordTile()"
       data-imx-identifier="start-tile-no-password-query-and-answer-set"
       [caption]="'#LDS#Heading Password Questions' | translate"
@@ -85,7 +85,7 @@
       </ng-template>
     </imx-icon-tile>
 
-    <imx-notification-tile data-imx-identifier="start-noficationtile-enable-notifications" *ngIf="projectConfig?.VI_Common_EnableNotifications"> </imx-notification-tile>
+    <imx-notification-tile data-imx-identifier="start-noficationtile-enable-notifications" *ngIf="projectConfig?.VI_Common_EnableNotifications"> </imx-notification-tile>-->
 
     <imx-icon-tile
       data-imx-identifier="start-tile-password-manager"

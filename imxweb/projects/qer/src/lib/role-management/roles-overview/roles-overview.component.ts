@@ -184,7 +184,7 @@ export class RolesOverviewComponent implements OnInit, IDataExplorerComponent {
     const table = this.metadataProvider.tables[this.ownershipInfo.TableName];
 
     const sidesheetRef = this.sidesheet.open(RoleDetailComponent, {
-      title: this.ldsReplace.transform(await this.translate.get('#LDS#Heading Edit {0}').toPromise(),
+      title: this.ldsReplace.transform(await this.translate.get('#LDS#View Details {0}').toPromise(),
         table.DisplaySingular),
       headerColour: 'blue',
       padding: '0px',

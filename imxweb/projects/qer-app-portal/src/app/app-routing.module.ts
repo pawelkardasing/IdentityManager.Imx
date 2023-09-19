@@ -31,6 +31,7 @@ import { LoginComponent, RouteGuardService } from 'qbm';
 import {
   PasswordQueryComponent
 } from 'qer';
+import { HelpPageComponent } from './help-page/help-page.component';
 
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 
@@ -49,6 +50,10 @@ const routes: Routes = [
     component: PasswordQueryComponent,
     canActivate: [RouteGuardService],
     resolve: [RouteGuardService]
+  },
+  {
+    path: 'help-page',
+    component: HelpPageComponent,
   },
   { path: '**', redirectTo: 'dashboard' }
 ];

@@ -1,4 +1,5 @@
 @import '~@elemental-ui/core/src/styles/_palette.scss';
+@import 'variables.scss';
 
 :host {
   display: flex;
@@ -29,7 +30,8 @@
 .imx-valuelist a:focus,
 .imx-valuelist a:hover {
   text-decoration: none;
-  background-color: mat-color($asher-gray-palette, 900);
+  color: $ING_primary;
+  //background-color: mat-color($asher-gray-palette, 900);
 }
 
 .imx-tile-content {
@@ -69,7 +71,7 @@
 }
 
 .imx-generic-tile-caption h1 > :last-child {
-  color: $black-9;
+  color: $ING_primary; //$black-9;
   margin-left: 1ex;
 }
 

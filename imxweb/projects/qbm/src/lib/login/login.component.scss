@@ -10,7 +10,7 @@ $inputWidth: calc(40vw + 2px);
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: $iris-blue;
+  background-color: $ING_primary;  //$iris-blue;
   color: $white;
   align-items: center;
 }
@@ -83,7 +83,7 @@ $inputWidth: calc(40vw + 2px);
   display: inline-block;
 
   button {
-    background-color: $VI_Common_Color_Blue_3;
+    background-color: $white; //$VI_Common_Color_Blue_3;
   }
 }
 
@@ -148,6 +148,10 @@ a.imx-loginLink:hover {
 
 .imx-passwordreset-login .imx-loginData {
   margin: 0;
+}
+
+.imx-button {
+  color: $ING_primary;
 }
 
 mat-form-field {

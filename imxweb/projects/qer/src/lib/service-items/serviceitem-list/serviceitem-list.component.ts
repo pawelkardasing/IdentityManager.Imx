@@ -164,7 +164,8 @@ export class ServiceitemListComponent implements AfterViewInit, OnChanges, OnDes
   }
 
   public async ngAfterViewInit(): Promise<void> {
-    this.keywords ? await this.onSearch(this.keywords) : await this.getData();
+    this.keywords ? await this.onSearch(this.keywords) : "";
+    //this.keywords ? await this.onSearch(this.keywords) : await this.getData();
   }
 
   public async ngOnChanges(changes: SimpleChanges): Promise<void> {

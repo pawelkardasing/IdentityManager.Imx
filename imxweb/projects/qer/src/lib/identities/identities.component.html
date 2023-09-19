@@ -51,9 +51,9 @@
   <button mat-button [matMenuTriggerFor]="menu" data-imx-identifier="identities-button-actions" *ngIf="isManagerForPersons">
     <eui-icon icon="ellipsisvertical"></eui-icon>
   </button>
-  <button mat-stroked-button data-imx-identifier="identities-button-create-new-identity" (click)="createNewIdentity()" class="imx-right-button">
+  <!--<button mat-stroked-button data-imx-identifier="identities-button-create-new-identity" (click)="createNewIdentity()" class="imx-right-button">
     <span translate>#LDS#Create identity</span>
-  </button>
+  </button>-->
   <mat-menu #menu="matMenu">
     <button mat-menu-item data-imx-identifier="identities-menu-item-download-report" [euiDownload]="downloadOptions">
       {{'#LDS#Download report on identities who report directly to you' | translate}}

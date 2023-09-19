@@ -1,4 +1,5 @@
 @import '~@elemental-ui/core/src/styles/_palette.scss';
+@import 'variables.scss';
 
 :host {
   display: flex;
@@ -29,6 +30,15 @@ h2 {
     margin: 20px 0;
     border-top-style: dashed;
   }
+
+  .mat-button-base {
+    border-color: $ING_primary;
+    color: $ING_primary;
+
+    &.mat-raised-button {
+      color: $white;
+    }
+  }
 }
 .mat-card-content {
   display: flex;
@@ -42,5 +52,5 @@ h2 {
   font-size: 48px;
   width: 48px;
   height: 48px;
-  color: $black;
+  color: $ING_primary; //$black;
 }

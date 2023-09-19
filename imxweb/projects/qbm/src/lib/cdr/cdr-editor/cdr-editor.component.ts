@@ -26,6 +26,7 @@
 
 import { Component, Input, ViewChild, ViewContainerRef, OnChanges, SimpleChanges, EventEmitter, Output, ElementRef } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
+import { DOCUMENT } from '@angular/common'
 
 import { ColumnDependentReference } from '../column-dependent-reference.interface';
 import { CdrRegistryService } from '../cdr-registry.service';

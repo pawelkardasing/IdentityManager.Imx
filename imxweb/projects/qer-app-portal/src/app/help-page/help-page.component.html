@@ -1,0 +1,49 @@
+<h1>Support Page</h1>
+
+<p class="title">Detailed work instructions and information regarding User Access Portal:</p>
+
+<p class="no-margin">Specific work instructions can be found here: <a href="https://confluence.ing.net/display/ISPDM/One+Identity+FAQ" target="_blank">Frequently Asked Questions</a><br>
+  More information regarding User Access portal can be found here <a href="https://theforge.ing.net/product/45616/details" target="_blank">support page</a>
+</p>
+
+<p>If you encounter any technical problems you can create a ticket on <a href="https://ing.service-now.com/navpage.do" target="_blank">SNOW</a> or contact the IT Service Desk.</p>
+ 
+<p class="title">For further support:</p>
+<p style="margin-bottom:30px;">Contact your Center of Excellence</p>
+
+<!--<a href="https://confluence.ing.net/pages/viewpage.action?pageId=1213908324" target="_blank" class="support-info">Support information >></a>-->
+ 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Head of CoE Column -->
+    <ng-container matColumnDef="headCoe">
+      <th mat-header-cell *matHeaderCellDef> Head of CoE</th>
+      <td mat-cell *matCellDef="let element"> {{element.headCoe}} </td>
+    </ng-container>
+  
+    <!-- Contact information Column -->
+    <ng-container matColumnDef="contactInfo">
+      <th mat-header-cell *matHeaderCellDef> Operational contact information </th>
+      <td mat-cell *matCellDef="let element"> {{element.contactInfo}} </td>
+    </ng-container>
+  
+    <!-- ServiceNow Column -->
+    <ng-container matColumnDef="serviceNow">
+      <th mat-header-cell *matHeaderCellDef> ServiceNow assignment group </th>
+      <td mat-cell *matCellDef="let element"> {{element.serviceNow}} </td>
+    </ng-container>
+  
+    <!-- confluence Column -->
+    <ng-container matColumnDef="confluence">
+      <th mat-header-cell *matHeaderCellDef> Confluence page </th>
+      <td mat-cell *matCellDef="let element"> <a href="{{element.confluence}}" target="_blank">{{element.confluence}}</a> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

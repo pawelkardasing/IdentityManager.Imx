@@ -140,7 +140,25 @@ export class AppComponent implements OnInit, OnDestroy {
     }));
   }
   public OpenDialogWin(){
-    const dialogConfig = new MatDialogConfig();
-    this.dialog.open(PopupSupportWindowComponent)
+    var newsLast: Date
+    var newsDBdate: Date
+
+    try {
+      newsLast =new Date(parseInt(localStorage.getItem('newsLast'),10));
+    } catch {}
+    if (newsLast == null || !isFinite(+newsLast)) {newsLast = new Date(+0);}
+ 
+    newsDBdate = new Date(); //get from API
+    if (!!!newsDBdate) {return;}
+
+    if (newsLast < newsDBdate  ) {
+      const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.disableClose = false;
+      dialogConfig.autoFocus = true;
+      dialogConfig.id = 'ing-news';
+      dialogConfig.data = {newsDBdate: newsDBdate.getTime().toString()}
+      this.dialog.open(PopupSupportWindowComponent, dialogConfig);
+    }
   }
 }

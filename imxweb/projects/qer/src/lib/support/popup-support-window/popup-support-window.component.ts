@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { Inject } from '@angular/core';
 
 
 @Component({
@@ -10,13 +11,15 @@ import { MatDialog } from '@angular/material/dialog';
 export class PopupSupportWindowComponent implements OnInit {
 
   constructor(
-    private dialog: MatDialog
+    private dialogRef: MatDialogRef<PopupSupportWindowComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
   }
 
   closeWindow() {
-    this.dialog.closeAll()
+    localStorage.setItem('newsLast', this.data.newsDBdate);
+    this.dialogRef.close();
   }
 }

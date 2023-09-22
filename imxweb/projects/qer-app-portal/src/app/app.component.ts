@@ -139,7 +139,6 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     }));
   }
-  public OpenDialogWin() {
     var newsLast: Date
     var newsDBdate: Date
 
@@ -159,9 +158,6 @@ export class AppComponent implements OnInit, OnDestroy {
       dialogConfig.id = 'ing-news';
       dialogConfig.data = {newsDBdate: newsDBdate.getTime().toString()}
       this.dialog.open(PopupSupportWindowComponent, dialogConfig);
-
-     
-
     }
   }
 }

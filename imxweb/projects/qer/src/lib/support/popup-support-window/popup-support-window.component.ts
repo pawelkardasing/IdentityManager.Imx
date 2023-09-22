@@ -20,6 +20,5 @@ export class PopupSupportWindowComponent implements OnInit {
 
   closeWindow() {
     localStorage.setItem('newsLast', this.data.newsDBdate);
-    this.dialogRef.close();
   }
 }

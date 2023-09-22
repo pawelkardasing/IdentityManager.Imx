@@ -139,7 +139,6 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     }));
   }
-  public OpenDialogWin(){
     var newsLast: Date
     var newsDBdate: Date
 

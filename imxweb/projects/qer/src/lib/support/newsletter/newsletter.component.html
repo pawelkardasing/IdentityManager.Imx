@@ -1,8 +1,7 @@
 <div>
-    <div class="release-body" *ngFor="let release of releases">
-        <H2>{{ release.title }} <small>{{ release.name }}</small></H2>
+    <div class="release-body" *ngFor="let release of _ReleasesData">
+        <h2>{{ release.title }} <small>{{ release.name }}</small></h2>
         <h3><small>{{release.date}}</small></h3>
-        <p>{{release.description}}</p>
         <a href="{{ release.url }}">More details here</a>
     </div>
 </div>
